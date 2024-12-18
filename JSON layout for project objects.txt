@@ -1,0 +1,37 @@
+project: {
+
+	name: string, 				#name of the project
+	thumbnail: image, 			#thumbnail for the project card
+	technologies: [technology, ...],	#a list of technologies used for the project
+	
+	dates:{
+		started: date(), 		#date I started working on the project
+		stopped: date(), 		#date I stopped working on the project 
+	},
+
+	status: [
+		"complete", 			# complete = finished
+		"abandoned", 			# abandoned = unfinished, and no interest in completing it. 
+		"incomplete",			# incomplete = unfinished but interest in completing it.
+		"upcoming",			# upcoming = not yet begun
+		], 
+
+	description: string, 			# a brief description of what the project is
+
+	story: string, 				# a paragraph or so explaining any backstory to this project: how it came about, things I learned, etc.
+	tags: [string, ...],			# an array of strings that act as identifiers for a project. Can be utilized by the search bar
+}
+
+
+technology: {
+	name: string 			# name of the technology; used as alt text if the image doesn't load; used as a hover popup text
+	link: string/link		# link to the dev/home page of that technology
+	icon: image			# image for use as a thumbnail or visual aid for that technology	
+}
+
+
+projects page:
+
+top middle is a search bar
+then there's an icon gallery for each project
+search bar can be used to reduce the number of projects that show up

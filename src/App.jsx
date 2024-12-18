@@ -1,17 +1,43 @@
 
-import './App.css'
-import LightHouseCanvas from './components/LightHouseCanvas'
+// import './App.css'
+// import LightHouseCanvas from './components/LightHouseCanvas'
+// import { useState } from 'react'
+// import AboutMePage from './pages/AboutMePage'
+// import ContactMePage from './pages/ContactMePage'
+// import LandingPage from './pages/LandingPage'
+// import ProjectsPage from './pages/ProjectsPage'
+
+// const App = () =>{
+//   const [currentPage, setCurrentPage] = useState(LandingPage)
+  
+//   return (
+//     <>
+//       <div className="relative w-full h-full">
+//         <LightHouseCanvas />
+//       </div>
+//       <div className="absolute top-0 w-full">
+//         <LandingPage />
+//       </div>
+//     </>
+//     )
+// }
+
+
+import React from 'react'
+import { BrowserRouter as Router} from 'react-router-dom'
+import BackgroundShader from './components/BackgroundShader'
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
 
 function App() {
-  
-  return (
-    <div className="relative w-full h-full">
-      <LightHouseCanvas />
-      <div className="absolute top-0 left-0 w-full h-1/2 flex flex-col justify-center items-center"> 
-        <h1 className="text-4xl">hold please, improvements are on the way!</h1>
-        <h1 className="text-4xl">footer</h1>
-      </div>
-    </div>
+  return(
+    <Router>
+      <BackgroundShader />
+      <Header />
+      <Sidebar />
+      <MainContent />
+    </Router>
   )
 }
 
