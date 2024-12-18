@@ -2,14 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
-    <div style={{ width:'200px', background:'#333', height: '100vh', position:'fixed', top:0, left:0, paddingTop: "3rem"}}>
-        <nav style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <Link to="/" style={{ color: 'white', padding: '0.5rem' }}>Home</Link>
-            <Link to="/about" style={{ color: 'white', padding: '0.5rem' }}>About</Link>
-            <Link to="/projects" style={{ color: 'white', padding: '0.5rem' }}>Projects</Link>
-            <Link to="/contacts" style={{ color: 'white', padding: '0.5rem' }}>Contacts</Link>
-        </nav>
+  return (
+    <div className="fixed top-20 left-0 w-64 h-full bg-gray-800 bg-opacity-95 text-white p-4 z-10">
+      <nav className="flex flex-col space-y-4">
+        <Link to="/" className="hover:text-gray-400">Home</Link>
+        <Link to="/about" className="hover:text-gray-400">About</Link>
+        <Link to="/projects" className="hover:text-gray-400">Projects</Link>
+        <Link to="/contact" className="hover:text-gray-400">Contact</Link>
+      </nav>
     </div>
+  );
 }
 
 export default Sidebar;

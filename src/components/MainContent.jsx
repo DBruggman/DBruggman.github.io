@@ -6,7 +6,8 @@ import Projects from '../pages/ProjectsPage';
 import Contact from '../pages/ContactMePage';
 
 const MainContent = () => {
-    <div style={{ marginLeft: '200px', marginTop: "3rem", padding: '2rem' }}>
+return (
+    <div className='fixed top-20 left-64 w-full h-full bg-stone-900 bg-opacity-70'>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -14,6 +15,7 @@ const MainContent = () => {
             <Route path="/contact" element={<Contact />} />
         </Routes>
     </div>
+);
 };
 
 export default MainContent;
