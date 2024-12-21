@@ -31,7 +31,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         d = sin(d*8. + iTime*.7)/8.;
         d = abs(d);
 
-        d = pow(0.015 / d, 1.5);
+        d = pow(0.015 / d, 1.2);
 
         finalColor += col * d;
     }

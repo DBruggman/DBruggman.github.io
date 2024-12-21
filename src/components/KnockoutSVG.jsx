@@ -1,18 +1,18 @@
 import React from 'react';
-import { ButtonMask, TextMask } from './SVGMasks';
 
 
 export function TextMask({id, x, y, width, height, text, textProps}){
   return(
-      <svg 
-          key={id}
-          x={x}
-          y={y}
-          width={width}
-          height={height}
-      >
-          <text {...textProps}>
-              {text}
+      <svg id={id} x={x} y={y} width={width} height={height} >
+          <text 
+            x="50%" 
+            y="50%" 
+            textAnchor="middle" 
+            textLength="100%" 
+            lengthAdjust="spacing" 
+            style={{...textProps, dominantBaseline: "middle"}}
+          >
+            {text}
           </text>
       </svg>
   )
@@ -20,40 +20,12 @@ export function TextMask({id, x, y, width, height, text, textProps}){
 
 export function ButtonMask({id, x, y, width, height, text, onElementClick}){
   return(
-      <svg 
-          key={id} 
-          x={x}
-          y={y}
-          width={width}
-          height={height}
-      >
-          <rect 
-              x="0"
-              y="0"
-              width="100%"
-              height="100%"
-              fill="black"
-              stroke="grey"
-              rx="10" 
-              onClick={onElementClick}
-          />
-          <rect 
-              x="3%"
-              y="3%"
-              width="94%"
-              height="94%"
-              fill="white"
-              rx="10" 
-          />
-          <text 
-              x="50%"
-              y="58%"
-              fill="black"
-              textAnchor="middle"
-              textLength="85%"
-              style={{font: ' bold 1.2rem sans-serif'}}
-              lengthAdjust="spacing"
-          >
+      <svg id={id} x={x} y={y} width={width} height={height}>
+          <rect x="0" y="0" width="100%" height="100%" fill="black" stroke="grey" rx="10" onClick={onElementClick} />
+          <rect x="3%" y="3%" width="94%" height="94%" fill="white" rx="10" />
+          <text x="50%" y="50%" fill="black" 
+            textAnchor="middle" dominantBaseline="middle" textLength="85%" lengthAdjust="spacing" 
+            style={{font: 'bold 1.2rem sans-serif'}}>
               {text}   
           </text>
       </svg>
