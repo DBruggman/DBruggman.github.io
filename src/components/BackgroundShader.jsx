@@ -34,7 +34,7 @@ const initWebGL = (canvas, fragmentShaderSource) => {
 
     const vertexShader = compileShader(gl.VERTEX_SHADER, vertexShaderSource);
     const fragmentShader = compileShader(gl.FRAGMENT_SHADER, fragmentShaderSource);
-    console.log("vertex shader: " + vertexShader + " fragment shader: " + fragmentShader);
+    //console.log("vertex shader: " + vertexShader + " fragment shader: " + fragmentShader);
 
     const program = gl.createProgram();
     gl.attachShader(program, vertexShader);
@@ -74,9 +74,9 @@ const initWebGL = (canvas, fragmentShaderSource) => {
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
         
-        // gl.clearColor(0, 0, 0, 1);
+        //gl.clearColor(0, 0, 0, 1);
 
-        // gl.clear(gl.COLOR_BUFFER_BIT);
+        //gl.clear(gl.COLOR_BUFFER_BIT);
         
         requestAnimationFrame(render);
     }
@@ -101,16 +101,16 @@ const BackgroundShader = () => {
     const canvasRef = useRef();
 
     useEffect(() => {
-        fetch('/shaders/fractalShader.glsl')
+        fetch('/shaders/smokeShader.glsl')
         .then((response) => {
             if(!response.ok) {
                 throw new Error('Failed to fetch fragment shader ${response.status}');
             }
-            console.log('File fetched successfully:", response);');
+            console.log("File fetched successfully:", {response});
             return response.text();
         })
         .then((fragmentShaderSource) => {
-            console.log('Fragment shader source loaded:', fragmentShaderSource);
+            //console.log('Fragment shader source loaded:', fragmentShaderSource);
             initWebGL(canvasRef.current, fragmentShaderSource);
         })
         .catch((error) => {

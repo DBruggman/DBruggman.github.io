@@ -7,7 +7,8 @@ import Contact from '../pages/ContactMePage';
 
 const MainContent = () => {
 return (
-    <div className='fixed top-28 left-72 end-8 bottom-0 bg-gray-900 bg-opacity-95 text-center'>
+    
+    <div className='fixed top-28 left-72 text-transparent [-webkit-background-clip: text;] backdrop-blur-sm bg-clip-text'>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
