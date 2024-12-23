@@ -1,79 +1,93 @@
 
+import {
+  Button,
+  Fieldset,
+  Input,
+  Stack,
+  Textarea,
+  Center,
+  Flex,
+  Container,
+  Heading,
+  Text,
+  Separator
+} from '@chakra-ui/react'
+import { Field } from './components/ui/field'
 import React, { useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import BackgroundShader from './components/BackgroundShader'
-import KnockoutSVG from './components/KnockoutSVG'
 import './index.css'
+ 
 
+function ContactMe() {
+  return (
+    <Fieldset.Root size="lg" maxW="md">
+      <Stack>
+        <Fieldset.Legend>
+          <Heading> Contact Me</Heading>
+        </Fieldset.Legend>
+        <Fieldset.HelperText>
+          Please provide contact your details below
 
-const testButton = {
-  id:'test_button',
-  text: 'Click Me', 
-  onElementClick: () => console.log('test Button clicked'), 
-  x: '10%px',
-  y: '260px',
-  width: '200px',
-  height: '30px'
+        </Fieldset.HelperText>
+      </Stack>
+
+      <Fieldset.Content>
+        <Field  label="Name">
+          <Input name="name" placeholder="Enter your name" />
+        </Field>
+
+        <Field label="Email address">
+          <Input name="email" type="email" placeholder="Enter your email address" />
+        </Field>
+
+        <Field label="Message">
+          <Textarea name="message" placeholder="Enter your message" />
+        </Field>
+      </Fieldset.Content>
+
+      <Button type="submit" alignSelf="flex-start">
+        Submit
+      </Button>
+    </Fieldset.Root>
+  )
 }
 
-//--Text
-const welcomeText = {
-  id:'welcome_text',
-  text: 'Welcome to my page!',
-  textProps: {fontSize: '2rem', fill: 'black', fontFamily: 'Sour Gummy, serif'}, 
-  x: '10%',
-  y: '60px',
-  width: '80%',
-  height: '30px'
+function AboutMe() {
+  return (
+    <>
+      <Heading>About Me</Heading>
+      <Text >
+          I hold a BS in Computer science and have experience applying my programming talent to many different fields
+          from data science to shader programming. 
+      </Text>
+        
+        
+        
+      <Text>
+        I look forward to working with you!
+      </Text>
+    </>
+  )
 }
 
-//--Buttons
-const aboutMeButton = {
-  id:'aboutMe_button',
-  text: 'About Me', 
-  onElementClick: () => console.log('about Button clicked'), 
-  x: '20%',
-  y: '120px',
-  width: '60%',
-  height: '30px'
-}
-
-const contactMeButton = {
-  id:'contactMe_button',
-  text: 'Contact Me', 
-  onElementClick: () => console.log('contact Button clicked'), 
-  x: '20%',
-  y: '180px',
-  width: '60%',
-  height: '30px'
-}
-
-const myProjectsButton = {
-  id:'myProjects_button',
-  text: 'My Projects', 
-  onElementClick: () => console.log('projects Button clicked'), 
-  x: '20%',
-  y: '240px',
-  width: '60%',
-  height: '30px'
-}
-
-const initialSVGElements = [
-  welcomeText, aboutMeButton, contactMeButton, myProjectsButton
-];
 
 function App() {
-  const [svgElements,setSVGElements] = useState(initialSVGElements);
-  
+    
   return(
     <>
-      <div id='background' className='fixed top-0 w-full h-full'>        
-        <BackgroundShader />
-      </div>
-
-      <div id='foreground' className='fixed top-0 w-full h-full'>
-        <KnockoutSVG svgElementProps={svgElements} backgroundColor={"#151515"} />
-      </div>
+        <Flex direction="column" align="center">
+      <Stack gap="14" align="center">  
+          
+            <Container centerContent>
+              <AboutMe />
+            </Container>
+            <Separator />
+            <Container centerContent>
+              <ContactMe />
+            </Container>
+          
+      </Stack>
+        </Flex>
     </>
   )
 }
