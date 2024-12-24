@@ -44,13 +44,13 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     vec2 uv = 2.*(fragCoord/iResolution.xy) - 1.;
         
     vec3 rgb = vec3(
-        0.0,
         0.4,
-        0.7
+        0.4,
+        0.5
     );
     
     vec3 offset = vec3(
-    0.0,0.2,0.2
+    0.15,0.35,0.4
     );
 
     // Output to screen
