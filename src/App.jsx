@@ -97,25 +97,25 @@ function Projects() {
 
 function App() {
     
-  // return(
-  //   <Container centerContent margin="10px" padding="20px">
-  //       <Flex gap="14" direction="column" align="center">          
+  return(
+    <Container centerContent margin="10px" padding="20px">
+        <Flex gap="14" direction="column" align="center">          
             
-  //             <AboutMe />
-            
-
-  //             <Projects />
-            
-            
-  //             <ContactMe />
+          <BackgroundShader />
+              <AboutMe />
             
 
-  //       </Flex>
-  //   </Container>
-  // )
+              <Projects />
+            
+            
+              <ContactMe />
+            
 
-  return (
-    <BackgroundShader />
+        </Flex>
+    </Container>
+  
+
+  
   )
 }
 
