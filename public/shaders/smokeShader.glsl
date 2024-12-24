@@ -1,4 +1,4 @@
-precision mediump float;
+precision highp float;
 
 uniform vec2 iResolution; // Canvas resolution (passed from JS)
 uniform float iTime; // Time since start (passed from JS)
@@ -6,7 +6,7 @@ uniform float iTime; // Time since start (passed from JS)
 float fbm( in vec2 p ){
     float z = 0.;
     float amplitude = 1.;
-    float frequency = 5.2;
+    float frequency = 3.2;
     
     float t = p.x;
     float u = p.y;
@@ -35,7 +35,7 @@ float pattern( in vec2 p )
     
     vec2 r = vec2( fbm(p + 4.0*q + vec2(1.7*jTime, 9.2*jTime) ), fbm( p + 4.0*q + vec2(8.3*jTime, 2.8*jTime) ) );
     
-    return fbm( p + 4.0*r );
+    return fbm( p + 2.0*r );
 }
 
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
@@ -45,8 +45,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         
     vec3 rgb = vec3(
         0.0,
-        0.7,
-        0.9
+        0.4,
+        0.7
     );
     
     vec3 offset = vec3(
@@ -54,7 +54,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     );
 
     // Output to screen
-    fragColor = vec4(rgb * vec3(pattern(uv),pattern(uv),pattern(uv)) + offset,0.5); //RGBA
+    fragColor = vec4(rgb * vec3(pattern(uv),pattern(uv),pattern(uv)) + offset,1.); //RGBA
 }
 
 void main() {

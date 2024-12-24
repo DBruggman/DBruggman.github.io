@@ -98,7 +98,7 @@ function Projects() {
 function App() {
     
   return(
-    <Container centerContent margin="10px" padding="20px">
+    <Container centerContent margin="10%" padding="10%px">
         <Flex gap="14" direction="column" align="center">          
             
           <BackgroundShader />

@@ -5,7 +5,7 @@ const BackgroundShader = () => {
   
   useEffect(() => {
 
-    fetch('/shaders/fractalShader.glsl')
+    fetch('/shaders/smokeShader.glsl')
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Failed to fetch fragment shader ${response.status}`);
