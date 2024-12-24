@@ -98,24 +98,16 @@ function Projects() {
 function App() {
     
   return(
-    <Container centerContent margin="10%" padding="10%px">
-        <Flex gap="14" direction="column" align="center">          
-            
-          <BackgroundShader />
-              <AboutMe />
-            
-
-              <Projects />
-            
-            
-              <ContactMe />
-            
-
-        </Flex>
-    </Container>
-  
-
-  
+    <>
+      <BackgroundShader />
+      <Container centerContent margin="2%" padding="10%">
+          <Flex gap="14" direction="column" align="center">
+            <AboutMe />
+            <Projects />
+            <ContactMe />
+          </Flex>
+      </Container>
+    </>  
   )
 }
 

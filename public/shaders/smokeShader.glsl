@@ -6,7 +6,7 @@ uniform float iTime; // Time since start (passed from JS)
 float fbm( in vec2 p ){
     float z = 0.;
     float amplitude = 1.;
-    float frequency = 3.2;
+    float frequency = 2.5;
     
     float t = p.x;
     float u = p.y;
@@ -29,7 +29,7 @@ float fbm( in vec2 p ){
 
 float pattern( in vec2 p )
 {
-    float jTime = iTime * 0.0087;
+    float jTime = iTime * 0.057;
 
     vec2 q = vec2( fbm( p + vec2(0.,0.)), fbm(p + vec2(0.2*jTime, 1.3*jTime)));
     
