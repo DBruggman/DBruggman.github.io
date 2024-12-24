@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from 'react';
 
 const BackgroundShader = () => {
   const canvasRef = useRef();
-
+  
   useEffect(() => {
-    let cleanup;
+
     fetch('/shaders/fractalShader.glsl')
       .then((response) => {
         if (!response.ok) {
@@ -13,16 +13,12 @@ const BackgroundShader = () => {
         return response.text();
       })
       .then((fragmentShaderSource) => {
-        cleanup = initWebGL(canvasRef.current, fragmentShaderSource);
+        return initWebGL(canvasRef.current, fragmentShaderSource); //should return the cleanup function
       })
       .catch((error) => {
         console.error('Error fetching fragment shader:', error.message);
       });
 
-    // Cleanup function to stop the animation and release resources
-    return () => {
-      if (cleanup) cleanup();
-    };
   }, []);
 
   return (
@@ -42,12 +38,14 @@ const BackgroundShader = () => {
 
 const initWebGL = (canvas, fragmentShaderSource) => {
   const gl = canvas.getContext('webgl');
-
+  
   if (!gl) {
     console.error('Unable to initialize WebGL. Your browser may not support it.');
     return;
   }
 
+  console.log("gl initialized: ", gl);
+  
   resizeCanvasToDisplaySize(canvas);
 
   const vertexShaderSource = `
@@ -61,13 +59,13 @@ const initWebGL = (canvas, fragmentShaderSource) => {
     const shader = gl.createShader(type);
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
-
+  
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
       console.error('Error compiling shader:', gl.getShaderInfoLog(shader));
       gl.deleteShader(shader);
       return null;
     }
-
+  
     return shader;
   };
 
@@ -139,5 +137,7 @@ const resizeCanvasToDisplaySize = (canvas) => {
   }
   return false; // No need to resize
 };
+
+
 
 export default BackgroundShader;

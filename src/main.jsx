@@ -1,17 +1,15 @@
-import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
-import { ThemeProvider } from "next-themes"
+import { Provider } from './components/ui/provider'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import App from './App.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ChakraProvider value={defaultSystem}>
-      <ThemeProvider attribute="class" disableTransitionOnChange>
+    <Provider>
+      
         <App />
-      </ThemeProvider>
-    </ChakraProvider>
+      
+    </Provider>
   </React.StrictMode>,
 )
