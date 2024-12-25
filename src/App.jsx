@@ -16,7 +16,7 @@ import { Field } from './components/ui/field'
 import React, { useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import BackgroundShader from './components/BackgroundShader';
-
+import { CoolPortrait } from './components/CoolPortrait';
  
 const containerTheme = {
   color: 'teal.100',
@@ -68,7 +68,7 @@ function AboutMe() {
     <Container {...containerTheme}
       label="About Me" 
     >
-
+      <CoolPortrait />
       <Heading>About Me</Heading>
       <Text >
           
@@ -76,9 +76,8 @@ function AboutMe() {
         from data science to shader programming. I'm interested in anything involving 3D graphics, digital audio,
         education, statistics, web development, and mobile development.
                   
-      </Text>  
-      <Text>
-        I look forward to working with you!
+        <br/>
+        <br/>I look forward to working with you!
       </Text>
     </Container>
   )
@@ -100,7 +99,7 @@ function App() {
   return(
     <>
       <BackgroundShader />
-      <Container centerContent margin="2%" padding="10%">
+      <Container centerContent padding="10%">
           <Flex gap="14" direction="column" align="center">
             <AboutMe />
             <Projects />
