@@ -16,7 +16,7 @@ import { Field } from './components/ui/field'
 import React, { useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import BackgroundShader from './components/BackgroundShader';
-import { CoolPortrait } from './components/CoolPortrait';
+
  
 const containerTheme = {
   color: 'teal.100',
@@ -26,10 +26,8 @@ const containerTheme = {
   padding: '20px',
   border: '1px solid #ccc',
   borderRadius: '5px',
-  maxW:"480px"
+  maxW: '524px',
 };
-
-
 
 function ContactMe() {
   return (
@@ -68,14 +66,22 @@ function AboutMe() {
     <Container {...containerTheme}
       label="About Me" 
     >
-      <CoolPortrait />
+
       <Heading>About Me</Heading>
       <Text >
-          
-        I hold a BS in Computer science and have experience applying my programming talent to many different fields
-        from data science to shader programming. I'm interested in anything involving 3D graphics, digital audio,
-        education, statistics, web development, and mobile development.
-                  
+        Hello! I'm Drew Bruggman, a software and web development freelancer with a broad skillset and an honest drive 
+        to learn new tech and expand my skillset.  
+        <br />
+        <br />I have a BS in Computer Science from California State University Sacramento, where I graduated with honors.
+        I am a problem solver and critical thinker with a creative bent.
+        I have been a passionate creator for all of my life, from my early days as an illustrator, to my formative
+        years as a journalist and writer, to my efforts as a music producer and composer.
+         
+        <br /> 
+        <br />I bring a broad understanding of disparate concepts and schools of thoughts to the table, and I am a
+        perceptive listener and communicator. 
+        I hope you will consider me for your next project.
+        Below are some of the other projects I've worked on, and below that is a contact form you can use to reach out to me.        
         <br/>
         <br/>I look forward to working with you!
       </Text>
